@@ -21,11 +21,11 @@ public class ProductIngredientEntity {
     @Column(name = "id_product", nullable = false)
     private Integer idProduct;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_ingredient", referencedColumnName = "id_ingredient", insertable = false, updatable = false)
     private IngredientEntity ingredient;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_product", referencedColumnName = "id_product", insertable = false, updatable = false)
     private ProductEntity product;
 
