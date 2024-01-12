@@ -1,11 +1,17 @@
 package com.pilot.cakepilot.persistence.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.List;
 
 @Entity
 @Table(name = "customers")
+@Getter
+@Setter
+@NoArgsConstructor
 public class CustomerEntity {
 
     @Id

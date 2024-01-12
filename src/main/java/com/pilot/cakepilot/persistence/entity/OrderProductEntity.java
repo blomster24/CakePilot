@@ -26,11 +26,11 @@ public class OrderProductEntity {
     @Column(nullable = false)
     private Integer quantity;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_product", referencedColumnName = "id_product", insertable = false, updatable = false)
     private ProductEntity product;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_order", referencedColumnName = "id_order", insertable = false, updatable = false)
     private OrderEntity order;
 

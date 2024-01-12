@@ -1,22 +1,18 @@
 package com.pilot.cakepilot.service.dtos;
 
-
+import com.pilot.cakepilot.persistence.entity.OrderProductEntity;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @Getter
-@Setter
-@NoArgsConstructor
 public class OrderProductDTO {
 
-    private Integer id;
-
     private Integer idOrder;
-
     private Integer idProduct;
-
     private Integer quantity;
 
-
+    public OrderProductDTO(OrderProductEntity orderProduct) {
+        this.idOrder = orderProduct.getIdOrder();
+        this.idProduct = orderProduct.getIdProduct();
+        this.quantity = orderProduct.getQuantity();
+    }
 }

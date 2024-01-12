@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class OrderProductService {
@@ -22,19 +23,9 @@ public class OrderProductService {
     }
 
     public List<OrderProductDTO> getAll() {
-        List<OrderProductEntity> orderProductEntityList = this.orderProductRepository.findAll();
-        List<OrderProductDTO> orderProductDTOS = new ArrayList<>();
-
-        orderProductEntityList.forEach(orderProduct -> {
-            OrderProductDTO orderProductDTO = new OrderProductDTO();
-            orderProductDTO.setId(orderProduct.getId());
-            orderProductDTO.setIdProduct(orderProduct.getIdProduct());
-            orderProductDTO.setIdOrder(orderProduct.getIdOrder());
-            orderProductDTO.setQuantity(orderProduct.getQuantity());
-
-            orderProductDTOS.add(orderProductDTO);
-        });
-        return orderProductDTOS;
+        List<OrderProductEntity> entities = this.orderProductRepository.findAll();
+        return entities.stream()
+                .map(OrderProductDTO::new)
+                .collect(Collectors.toList());
     }
-
 }

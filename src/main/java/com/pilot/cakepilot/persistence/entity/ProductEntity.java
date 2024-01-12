@@ -32,6 +32,6 @@ public class ProductEntity {
     private Integer quantity;
 
     @OneToMany(mappedBy = "product")
-    private List<ProductIngredientEntity> productIngrediens;
+    private List<ProductIngredientEntity> productIngredients;
 
 }

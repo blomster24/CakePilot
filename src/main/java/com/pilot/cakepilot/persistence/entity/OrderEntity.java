@@ -41,7 +41,7 @@ public class OrderEntity {
     @OneToMany(mappedBy = "order")
     private List<OrderProductEntity> orderProducts;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_customer", referencedColumnName = "id_customer", insertable = false, updatable = false)
     private CustomerEntity customer;
 
