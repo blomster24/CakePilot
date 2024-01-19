@@ -1,5 +1,6 @@
 package com.pilot.cakepilot.persistence.entity;
 
+import com.pilot.cakepilot.persistence.audti.AuditableEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,7 +12,7 @@ import java.util.Objects;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class ProductIngredientId {
+public class ProductIngredientId extends AuditableEntity {
 
     private Integer idProduct;
 

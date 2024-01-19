@@ -1,5 +1,6 @@
 package com.pilot.cakepilot.persistence.entity;
 
+import com.pilot.cakepilot.persistence.audti.AuditableEntity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,7 +11,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class OrderProductEntity {
+public class OrderProductEntity extends AuditableEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

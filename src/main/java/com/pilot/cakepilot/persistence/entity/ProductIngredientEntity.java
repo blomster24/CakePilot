@@ -1,5 +1,6 @@
 package com.pilot.cakepilot.persistence.entity;
 
+import com.pilot.cakepilot.persistence.audti.AuditableEntity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,7 +12,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class ProductIngredientEntity {
+public class ProductIngredientEntity extends AuditableEntity {
 
     @Id
     @Column(name = "id_ingredient", nullable = false)
