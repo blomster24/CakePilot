@@ -1,6 +1,7 @@
 package com.pilot.cakepilot.persistence.entity;
 
-import com.pilot.cakepilot.persistence.audti.AuditableEntity;
+import com.pilot.cakepilot.persistence.audit.AuditableEntity;
+import com.pilot.cakepilot.persistence.audit.AuditableEntityListener;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -8,6 +9,7 @@ import lombok.Setter;
 
 @Entity
 @Table(name = "ingredients")
+@EntityListeners({AuditableEntity.class, AuditableEntityListener.class})
 @Getter
 @Setter
 @NoArgsConstructor
@@ -29,5 +31,8 @@ public class IngredientEntity extends AuditableEntity {
 
     @Column(nullable = false)
     private Integer quantity;
+
+    @Column(columnDefinition = "TINYINT", nullable = false)
+    private Boolean deleted;
 
 }

@@ -1,6 +1,7 @@
 package com.pilot.cakepilot.persistence.entity;
 
-import com.pilot.cakepilot.persistence.audti.AuditableEntity;
+import com.pilot.cakepilot.persistence.audit.AuditableEntity;
+import com.pilot.cakepilot.persistence.audit.AuditableEntityListener;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,6 +12,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "orders")
+@EntityListeners({AuditableEntity.class, AuditableEntityListener.class})
 @Getter
 @Setter
 @NoArgsConstructor

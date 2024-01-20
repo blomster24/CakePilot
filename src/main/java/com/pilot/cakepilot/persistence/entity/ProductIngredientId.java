@@ -1,6 +1,6 @@
 package com.pilot.cakepilot.persistence.entity;
 
-import com.pilot.cakepilot.persistence.audti.AuditableEntity;
+import com.pilot.cakepilot.persistence.audit.AuditableEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
